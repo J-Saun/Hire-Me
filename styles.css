@@ -1,0 +1,11 @@
+/* table {
+    border: 1px solid Black;
+}
+td {
+    padding: 5px 10px;
+} */
+img {
+  border-radius: 50%;
+  width: 400px;
+  height: auto;
+}
