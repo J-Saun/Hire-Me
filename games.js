@@ -1,25 +1,32 @@
 // giphy API key
 let giphyKey = "OE9YCDjFsnC6YihFrMWBl6HOm8LJlVXn";
 
-let totalDice = 8;
+let totalDice = 4;
 let diceSides = 6;
 
 let dice = [];
 
+// the function used on each individual die
 function roll(diceSides) {
   let result = Math.floor(Math.random() * diceSides) + 1;
   return result;
 }
-
+// pass in the number of dice and how many sides each one has
 function executeRoll(totalDice, diceSides) {
   for (let i = 0; i < totalDice; i++) {
     val = roll(diceSides);
     dice.push(val);
   }
 }
+// create new elements for each die on the board
 
+/* resulting structure of the element 
+<div class="dice">
+<i class=`fa-solid fa-dice-${dieClass}`></i>
+</div>; 
+*/
 function createDie(dieClass) {
-  let newDie = document.createElement("div");
+  const newDie = document.createElement("div");
   newDie.classList = "dice";
   const icon = document.createElement("i");
 
@@ -33,10 +40,11 @@ function createDie(dieClass) {
 }
 
 function updateDOM(dice) {
+  // loop through the dice arr
   for (let i = 0; i < dice.length; i++) {
     let value = dice[i];
 
-    //   // Convert to string so that a template literal will change the dice icon
+    // convert to a string so that the template literal will change the dice icons class
     if (value === 1) value = "one";
     else if (value === 2) value = "two";
     else if (value === 3) value = "three";
@@ -48,51 +56,43 @@ function updateDOM(dice) {
     createDie(value);
   }
 }
-executeRoll(totalDice, diceSides);
-updateDOM(dice);
-console.log(dice);
-// let die1 = document.querySelector("#die1 i");
-// let die2 = document.querySelector("#die2 i");
+// clear board elements for next roll
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
 
-// dice.length = 5;
-// console.log(dice);
+// populate board on load
+executeTurn();
 
-// // Dice
+// Score keeper
+function score(dice) {
+  let total = 0;
 
-// // randomize starting dice position
-// die1.classList = roll();
-// die2.classList = roll();
+  for (let i = 0; i < dice.length; i++) {
+    total += dice[i];
+  }
+  // test
+  console.log(dice, "total score", total);
+  // reset dice to 0
+  dice.length = 0;
 
-// // grab the roll btn
-// let rollBtn = document.querySelector("#rollBtn");
-// rollBtn.addEventListener("click", executeTurn);
+  return total;
+}
 
-// function roll() {
-//   let points = Math.floor(Math.random() * 6) + 1;
+function executeTurn() {
+  const gameBoard = document.querySelector(".gameBoard");
 
-//   //   console.log(player.score);
-//   // Convert to string so that a template literal will change the dice icon
-//   if (points === 1) points = "one";
-//   else if (points === 2) points = "two";
-//   else if (points === 3) points = "three";
-//   else if (points === 4) points = "four";
-//   else if (points === 5) points = "five";
-//   else points = "six";
-
-//   // change class name to reflect the roll
-//   dieClass = `fa-solid fa-dice-${points}`;
-
-//   return dieClass;
-// }
-
-// function updateDie() {
-//   die1.classList = roll();
-//   die2.classList = roll();
-// }
-
-// function executeTurn() {
-//   updateDie();
-// }
+  removeAllChildNodes(gameBoard);
+  executeRoll(totalDice, diceSides);
+  updateDOM(dice);
+  score(dice);
+}
+let rollBtn1 = document.querySelector("#rollBtn1");
+rollBtn1.addEventListener("click", executeTurn);
+let rollBtn2 = document.querySelector("#rollBtn2");
+rollBtn2.addEventListener("click", executeTurn);
 
 // Players name editor
 
@@ -101,9 +101,5 @@ function changeName(player) {
   let enterName = prompt("Please enter your name.");
   let name = (document.querySelector(`h2.${player}`).textContent = enterName);
 }
-// Score keeper
-function score(player) {
-  console.log("score");
-}
-score();
+
 // Win Tracker
