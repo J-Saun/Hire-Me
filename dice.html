@@ -25,40 +25,33 @@
     </header>
     <section class="main">
       <aside class="players">
+        <div class="avatar"></div>
         <span class="playerName">
           <i onclick="changeName('p1')" class="fa-regular fa-pen-to-square"></i>
-          <h2 class="p1">Player 1</h2>
+          <p class="p1">Player 1</p>
         </span>
         <span class="playerScore">
-          <h3>Score:<span>6</span></h3>
+          <p>Score:<span>6</span></p>
         </span>
         <div class="playerWins">
-          <h3>Wins:</h3>
-          <p class="winCount" id="p1WinCount">0</p>
+          <p>Wins:<span>0</span></p>
         </div>
         <button id="rollBtn" onclick="roll()">Roll</button>
       </aside>
 
-      <main class="gameBoard">
-        <div class="dice" id="die1">
-          <i />
-        </div>
-        <div class="dice" id="die2">
-          <i />
-        </div>
-      </main>
+      <main class="gameBoard" id="gameBoard"></main>
 
       <aside class="players">
+        <div class="avatar"></div>
         <span class="playerName">
-          <h2 class="p2">Player 2</h2>
+          <p class="p2">Player 2</p>
           <i onclick="changeName('p2')" class="fa-regular fa-pen-to-square"></i>
         </span>
         <span class="playerScore">
-          <h3>Score:<span>6</span></h3>
+          <p>Score:<span>6</span></p>
         </span>
         <div class="playerWins">
-          <h3>Wins:</h3>
-          <p class="winCount" id="p2WinCount">0</p>
+          <p>Wins:<span>0</span></p>
         </div>
         <button id="rollBtn" onclick="roll()">Roll</button>
       </aside>

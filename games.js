@@ -1,47 +1,98 @@
 // giphy API key
 let giphyKey = "OE9YCDjFsnC6YihFrMWBl6HOm8LJlVXn";
 
-let die1 = document.querySelector("#die1 i");
-let die2 = document.querySelector("#die2 i");
-console.log(die1, die2);
-// Board generator
+let totalDice = 8;
+let diceSides = 6;
 
-// Dice
+let dice = [];
 
-// randomize starting dice position
-die1.classList = roll();
-die2.classList = roll();
+function roll(diceSides) {
+  let result = Math.floor(Math.random() * diceSides) + 1;
+  return result;
+}
 
-// grab the roll btn
-let rollBtn = document.querySelector("#rollBtn");
-rollBtn.addEventListener("click", executeTurn);
+function executeRoll(totalDice, diceSides) {
+  for (let i = 0; i < totalDice; i++) {
+    val = roll(diceSides);
+    dice.push(val);
+  }
+}
 
-function roll() {
-  let points = Math.floor(Math.random() * 6) + 1;
-
-  //   console.log(player.score);
-  // Convert to string so that a template literal will change the dice icon
-  if (points === 1) points = "one";
-  else if (points === 2) points = "two";
-  else if (points === 3) points = "three";
-  else if (points === 4) points = "four";
-  else if (points === 5) points = "five";
-  else points = "six";
+function createDie(dieClass) {
+  let newDie = document.createElement("div");
+  newDie.classList = "dice";
+  const icon = document.createElement("i");
 
   // change class name to reflect the roll
-  dieClass = `fa-solid fa-dice-${points}`;
+  icon.classList = `fa-solid fa-dice-${dieClass}`;
 
-  return dieClass;
+  newDie.appendChild(icon);
+
+  const gameBoard = document.querySelector(".gameBoard");
+  gameBoard.appendChild(newDie);
 }
 
-function updateDie() {
-  die1.classList = roll();
-  die2.classList = roll();
-}
+function updateDOM(dice) {
+  for (let i = 0; i < dice.length; i++) {
+    let value = dice[i];
 
-function executeTurn() {
-  updateDie();
+    //   // Convert to string so that a template literal will change the dice icon
+    if (value === 1) value = "one";
+    else if (value === 2) value = "two";
+    else if (value === 3) value = "three";
+    else if (value === 4) value = "four";
+    else if (value === 5) value = "five";
+    else if (value === 6) value = "six";
+    else value = dice[i];
+
+    createDie(value);
+  }
 }
+executeRoll(totalDice, diceSides);
+updateDOM(dice);
+console.log(dice);
+// let die1 = document.querySelector("#die1 i");
+// let die2 = document.querySelector("#die2 i");
+
+// dice.length = 5;
+// console.log(dice);
+
+// // Dice
+
+// // randomize starting dice position
+// die1.classList = roll();
+// die2.classList = roll();
+
+// // grab the roll btn
+// let rollBtn = document.querySelector("#rollBtn");
+// rollBtn.addEventListener("click", executeTurn);
+
+// function roll() {
+//   let points = Math.floor(Math.random() * 6) + 1;
+
+//   //   console.log(player.score);
+//   // Convert to string so that a template literal will change the dice icon
+//   if (points === 1) points = "one";
+//   else if (points === 2) points = "two";
+//   else if (points === 3) points = "three";
+//   else if (points === 4) points = "four";
+//   else if (points === 5) points = "five";
+//   else points = "six";
+
+//   // change class name to reflect the roll
+//   dieClass = `fa-solid fa-dice-${points}`;
+
+//   return dieClass;
+// }
+
+// function updateDie() {
+//   die1.classList = roll();
+//   die2.classList = roll();
+// }
+
+// function executeTurn() {
+//   updateDie();
+// }
 
 // Players name editor
 
@@ -52,7 +103,7 @@ function changeName(player) {
 }
 // Score keeper
 function score(player) {
-  console.log(die1 + die2);
+  console.log("score");
 }
 score();
 // Win Tracker
