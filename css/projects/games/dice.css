@@ -6,12 +6,14 @@
 body {
   background-color: var(--primary-dark);
 }
+header {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 1em;
+  text-align: center;
+}
 .btn {
   height: 40px;
-}
-.title {
-  text-align: center;
-  color: var(--primary-light);
 }
 
 .main {
@@ -57,20 +59,30 @@ aside {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  height: 0px;
+  height: min-content;
 }
-.dice .numberRow {
-  display: flex;
+
+#rollBtn {
+  border: 1px solid black;
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  height: 30px;
+  width: 100%;
+  /* visibility: hidden; */
 }
-.dot {
-  background-color: black;
-  border-radius: 50%;
-  -webkit-border-radius: ;
-  -moz-border-radius: ;
-  -ms-border-radius: ;
-  -o-border-radius: ;
-  height: 25px;
-  margin: 1em;
-  padding: 0.5em;
-  width: 25px;
+#rollBtn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* footer  */
+footer {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 1em;
 }
