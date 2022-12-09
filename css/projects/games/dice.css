@@ -1,0 +1,76 @@
+:root {
+  --primary-light: aliceblue;
+  --primary-dark: lightslategray;
+}
+
+body {
+  background-color: var(--primary-dark);
+}
+.btn {
+  height: 40px;
+}
+.title {
+  text-align: center;
+  color: var(--primary-light);
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Players Name, Score, and win count  */
+aside {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  height: fit-content;
+  padding: 1em;
+}
+.players {
+  font-size: 2rem;
+  text-align: center;
+}
+.playerName {
+  display: flex;
+}
+.playerScore h3 {
+}
+.playerWins h3 {
+}
+.winCount {
+  font-size: 2.5em;
+}
+.gameBoard {
+  display: flex;
+}
+
+/* The Game board dice  */
+.dice {
+  color: white;
+  font-size: 10em;
+  margin: 0.1em;
+}
+.fa-solid {
+  border-radius: 50%;
+  background-color: black;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  height: 0px;
+}
+.dice .numberRow {
+  display: flex;
+}
+.dot {
+  background-color: black;
+  border-radius: 50%;
+  -webkit-border-radius: ;
+  -moz-border-radius: ;
+  -ms-border-radius: ;
+  -o-border-radius: ;
+  height: 25px;
+  margin: 1em;
+  padding: 0.5em;
+  width: 25px;
+}

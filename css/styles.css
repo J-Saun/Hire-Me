@@ -1,0 +1,28 @@
+/* table {
+    border: 1px solid Black;
+}
+td {
+    padding: 5px 10px;
+} */
+img {
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+body {
+  background-color: #e3dfff;
+}
+hr {
+  width: 50px;
+  border-style: none;
+  border-top: dotted;
+  border-color: lightgrey;
+  border-width: 6px;
+}
+h1 {
+  color: #2e86ab;
+}
+h3 {
+  color: #565554;
+}

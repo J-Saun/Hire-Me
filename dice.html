@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice</title>
+    <link rel="stylesheet" href="css/projects/games/dice.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="title">
+      <h1>Dice</h1>
+    </header>
+    <section class="main">
+      <aside class="players">
+        <span class="playerName">
+          <i onclick="changeName('p1')" class="fa-regular fa-pen-to-square"></i>
+          <h2 class="p1">Player 1</h2>
+        </span>
+        <span class="playerScore">
+          <h3>Score:<span>6</span></h3>
+        </span>
+        <div class="playerWins">
+          <h3>Wins:</h3>
+          <p class="winCount" id="p1WinCount">0</p>
+        </div>
+      </aside>
+      <main class="gameBoard">
+        <div class="dice" id="die1">
+          <i class="fa-solid fa-dice-three"></i>
+        </div>
+        <div class="dice" id="die2">
+          <i class="fa-solid fa-dice-three"></i>
+        </div>
+      </main>
+      <aside class="players">
+        <span class="playerName">
+          <h2 class="p2">Player 2</h2>
+          <i onclick="changeName('p2')" class="fa-regular fa-pen-to-square"></i>
+        </span>
+        <span class="playerScore">
+          <h3>Score:<span>6</span></h3>
+        </span>
+        <div class="playerWins">
+          <h3>Wins:</h3>
+          <p class="winCount" id="p2WinCount">0</p>
+        </div>
+      </aside>
+    </section>
+    <script src="games.js"></script>
+  </body>
+</html>
