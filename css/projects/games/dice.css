@@ -1,6 +1,7 @@
 :root {
   --primary-light: aliceblue;
   --primary-dark: lightslategray;
+  --clear-black: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -23,10 +24,85 @@ header {
 
 /* Players Name, Score, and win count  */
 aside {
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
+  /* background-color: var(--primary-light); */
+  color: var(--primary-light);
   height: fit-content;
   padding: 1em;
+}
+#leftSide {
+}
+#rightSide {
+}
+.players {
+  font-size: 2rem;
+  /* text-align: center; */
+}
+.player {
+  border-top: 1px solid var(--primary-light);
+  border-bottom: 1px solid var(--primary-light);
+  padding: 1em 0;
+}
+.player-name {
+  display: flex;
+  justify-content: center;
+}
+.player-name i {
+  font-size: 18px;
+  margin-left: 5px;
+}
+.player-head {
+  /* padding: 0 10px; */
+  display: flex;
+}
+.player-body {
+  position: relative;
+}
+.score-count {
+  color: var(--primary-light);
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  font-size: 65px;
+  background-color: var(--clear-black);
+  width: 75px;
+  height: 75px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#leftSide .player-head {
+  justify-content: end;
+}
+#leftSide .score-count {
+  right: 0;
+}
+#rightSide .score-count {
+  left: 0;
+}
+
+.win-count {
+  border-radius: 50%;
+  color: var(--primary-light);
+
+  background-color: var(--clear-black);
+  bottom: 0;
+  text-align: center;
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  font-size: 65px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#leftSide .win-count {
+  left: 0;
+}
+#rightSide .win-count {
+  right: 0;
 }
 .avatar {
   background-color: var(--primary-dark);
@@ -38,37 +114,29 @@ aside {
   -o-border-radius: 50%;
   height: 250px;
   width: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.players {
-  font-size: 2rem;
-  /* text-align: center; */
+#leftSide .avatar {
+  background-image: url("/public/img/test/test-gif-1.gif");
 }
-.playerName {
+#rightSide .avatar {
+  background-image: url("/public/img/test/test-gif-2.gif");
+}
+.player-footer {
   display: flex;
-  padding: 0;
+  justify-content: flex-end;
+  padding: 0 6px;
+}
+#leftSide .player-footer {
+  justify-content: flex-start;
+}
+.player-name {
+  display: flex;
   margin: 0;
 }
-.playerName h2 {
-  display: flex;
-  padding: 0;
+.player-name p {
   margin: 0;
-}
-.playerName p {
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-.playerName span {
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-.playerScore h3 {
-}
-.playerWins h3 {
-}
-.winCount {
-  /* font-size: 2.5em; */
 }
 .gameBoard {
   align-items: center;

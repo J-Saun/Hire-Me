@@ -24,36 +24,12 @@
       <h1>Dice</h1>
     </header>
     <section class="main">
-      <aside class="players">
-        <div class="avatar"></div>
-        <span class="playerName">
-          <i onclick="changeName('p1')" class="fa-regular fa-pen-to-square"></i>
-          <p class="p1">Player 1</p>
-        </span>
-        <span class="playerScore">
-          <p>Score:<span>6</span></p>
-        </span>
-        <div class="playerWins">
-          <p>Wins:<span>0</span></p>
-        </div>
-        <button id="rollBtn1">Roll</button>
-      </aside>
+      <aside class="players" id="leftSide"></aside>
 
       <main class="gameBoard" id="gameBoard"></main>
 
-      <aside class="players">
-        <div class="avatar"></div>
-        <span class="playerName">
-          <p class="p2">Player 2</p>
-          <i onclick="changeName('p2')" class="fa-regular fa-pen-to-square"></i>
-        </span>
-        <span class="playerScore">
-          <p>Score:<span>6</span></p>
-        </span>
-        <div class="playerWins">
-          <p>Wins:<span>0</span></p>
-        </div>
-        <button id="rollBtn2">Roll</button>
+      <aside class="players" id="rightSide">
+        <!-- <button id="rollBtn2">Roll</button> -->
       </aside>
     </section>
     <footer>footer</footer>
