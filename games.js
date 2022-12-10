@@ -153,7 +153,7 @@ function createPlayer(playerId) {
   playerBody.appendChild(scoreCount);
 
   const playerFooter = document.createElement("div");
-  playerFooter.classList = "player_footer";
+  playerFooter.classList = "player-footer";
   const winTitle = document.createElement("span");
   winTitle.classList = "win-title";
   winTitle.textContent = "Wins";
