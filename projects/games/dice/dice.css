@@ -6,6 +6,8 @@
 
 body {
   background-color: var(--primary-dark);
+  padding: 0;
+  margin: 0;
 }
 header {
   background-color: var(--primary-light);
@@ -47,6 +49,7 @@ aside {
   justify-content: center;
 }
 .player-name i {
+  cursor: pointer;
   font-size: 18px;
   margin-left: 5px;
 }
@@ -131,6 +134,9 @@ aside {
 #leftSide .player-footer {
   justify-content: flex-start;
 }
+#rightSide .player .player-footer {
+  /* justify-content: center; */
+}
 .player-name {
   display: flex;
   margin: 0;
@@ -148,7 +154,7 @@ aside {
 /* The Game board dice  */
 .dice {
   color: white;
-  font-size: 10em;
+  font-size: 8em;
   margin: 0.1em;
 }
 .fa-solid {
